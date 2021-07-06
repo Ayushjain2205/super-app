@@ -21,7 +21,6 @@ import { GraphQLClient } from "graphql-request";
 import "./App.css";
 
 import Shop from "./components/Shop/Shop";
-import Home from "./components/Home/Home";
 
 const App = () => {
   const { user, isAuthenticated } = useAuth0();

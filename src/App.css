@@ -1,12 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap");
 
 body {
   font-family: "Roboto", sans-serif !important;
   background-color: #fff;
-}
-
-* {
-  font-family: "Roboto", sans-serif !important;
 }
 
 /* Navbar */
@@ -17,4 +13,106 @@ body {
   margin-bottom: 1rem;
   width: 100%;
   -webkit-backface-visibility: hidden;
+}
+
+.nav-items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-item {
+  margin: 5px 10px;
+}
+
+.first-nav-section {
+  margin: 0px 50px;
+}
+
+.arrow-down {
+  margin-left: 5px;
+}
+
+.profile-div {
+  margin-left: auto;
+}
+
+.search-field {
+  width: 20vw;
+}
+
+.search-section {
+  margin: auto;
+}
+
+.search-field,
+.search-btn {
+  border-radius: 8px;
+}
+
+.app-name {
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+
+/* Homepage */
+.home-header {
+  text-align: center;
+  margin: 40px 0px;
+  font-size: 64px;
+  font-weight: bolder;
+}
+
+.home-tile {
+  height: 253px;
+  width: 237px;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-section-holder a {
+  color: inherit;
+  text-decoration: none !important;
+}
+
+.home-tile-img {
+  margin: auto;
+  display: block;
+}
+
+.home-tile-text {
+  padding-left: 20px;
+  padding-bottom: 10px;
+}
+
+.home-tile-holder {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 40px;
+  grid-row-gap: 40px;
+}
+
+.home-section-holder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.home-buttons-holder {
+  margin-left: 100px;
+}
+
+.category-btn {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  border-radius: 18px;
+  height: 55px;
+  width: 300px;
+  justify-content: space-between;
+  margin: 42px 0px;
 }
