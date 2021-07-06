@@ -1,34 +1,37 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react";
 import {
   Switch,
   BrowserRouter as Router,
   Route,
   Redirect,
-} from 'react-router-dom'
-import Spinner from 'react-bootstrap/Spinner'
-import { UserContext } from './context/UserContext'
-import { checkUser } from './services/magic'
+} from "react-router-dom";
+import { UserContext } from "./context/UserContext";
+import { useAuth0 } from "@auth0/auth0-react";
 
 // Import pages
-import Authenticate from './components/Authenticate'
-import Dashboard from './components/Dashboard'
-import PrivateRoute from './components/Private'
-import Homepage from './components/Screens/Homepage'
-import WalletForm from './components/Screens/WalletForm'
+import Dashboard from "./components/Dashboard";
+import Homepage from "./components/Screens/Homepage";
+import WalletForm from "./components/Screens/WalletForm";
+import Chat from "./components/Screens/Chat";
+import LoginScreen from "./components/Screens/LoginScreen";
 
-import { GraphQLClient } from 'graphql-request'
-import './App.css'
+import Navbar from "./components/layout/Navbar";
 
-import Shop from './components/Shop/Shop'
-import Home from './components/Home/Home'
+import { GraphQLClient } from "graphql-request";
+import "./App.css";
+
+import Shop from "./components/Shop/Shop";
+import Home from "./components/Home/Home";
 
 const App = () => {
-  const [shops, setShops] = useState(null)
-  const [users, setUsers] = useState(null)
+  const { user, isAuthenticated } = useAuth0();
+
+  const [shops, setShops] = useState(null);
+  const [users, setUsers] = useState(null);
   const graphcms = new GraphQLClient(
-    'https://api-ap-northeast-1.graphcms.com/v2/ckp8dwi04vju901xp03oz89yu/master',
-  )
-  console.log(shops)
+    "https://api-ap-northeast-1.graphcms.com/v2/ckp8dwi04vju901xp03oz89yu/master"
+  );
+  console.log(shops);
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -40,10 +43,10 @@ const App = () => {
           email
           mobile
         }
-      }`,
-      )
-      setUsers(users)
-    }
+      }`
+      );
+      setUsers(users);
+    };
 
     const fetchShops = async () => {
       const { shops } = await graphcms.request(
@@ -78,63 +81,48 @@ const App = () => {
           }
         }
       }
-    `,
-      )
+    `
+      );
 
-      setShops(shops)
-    }
+      setShops(shops);
+    };
 
-    fetchUsers()
-    fetchShops()
-    console.log(shops)
-  }, [])
+    fetchUsers();
+    fetchShops();
+    console.log(shops);
+  }, []);
 
-  const [user, setUser] = useState({ isLoggedIn: null, email: '' })
-  const [loading, setLoading] = useState()
-  useEffect(() => {
-    const validateUser = async () => {
-      setLoading(true)
-      try {
-        await checkUser(setUser)
-        setLoading(false)
-      } catch (error) {
-        console.error(error)
-      }
-    }
-    validateUser()
-  }, [user.isLoggedIn])
-  if (loading) {
-    return (
-      <div
-        className="d-flex justify-content-center align-items-center"
-        style={{ height: '100vh' }}
-      >
-        <Spinner animation="border" />
-      </div>
-    )
-  }
+  const [userDetails, setUserDetails] = useState({
+    email: user ? user.email : "ayushjain2205@gmail.com",
+  });
+
+  console.log(isAuthenticated);
+
   return (
-    <UserContext.Provider value={user}>
-      <div className="App">
+    <UserContext.Provider value={userDetails}>
+      <div className='App'>
         <Router>
-          {user.isLoggedIn && <Redirect to={{ pathname: '/home' }} />}
-          {!shops ? (
-            'Loading'
+          <Navbar />
+          {/* <Route exact path='/login' render={(props) => <LoginScreen />} />
+          <Route exact path='/' render={(props) => <Homepage />} /> */}
+          {/* {!user ? (
+            <Redirect to={{ pathname: "/login" }} />
           ) : (
-            <Switch>
-              <Route exact path="/" component={Authenticate} />
-              <Route exact path="/home" render={(props) => <Homepage />} />
-              <Route exact path="/wallet" render={(props) => <WalletForm />} />
-              <Route exact path="/dashboard" component={Dashboard} />
-              <Route path="/shops/:slug">
-                <Shop shops={shops} />
-              </Route>
-              <PrivateRoute path="/home" component={Home} />
-            </Switch>
-          )}
+            <Redirect to={{ pathname: "/" }} />
+          )} */}
+          <Switch>
+            <Route exact path='/login' render={(props) => <LoginScreen />} />
+            <Route exact path='/' render={(props) => <Homepage />} />
+            <Route exact path='/wallet' render={(props) => <WalletForm />} />
+            <Route exact path='/chat' render={(props) => <Chat />} />
+            <Route exact path='/dashboard' component={Dashboard} />
+            <Route path='/shops/:slug'>
+              <Shop shops={shops} />
+            </Route>
+          </Switch>
         </Router>
       </div>
     </UserContext.Provider>
-  )
-}
-export default App
+  );
+};
+export default App;
