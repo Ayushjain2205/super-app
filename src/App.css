@@ -5,6 +5,10 @@ body {
   background-color: #fff;
 }
 
+:root {
+  --primary: #1750ff;
+}
+
 /* Navbar */
 .navbar {
   background-color: #f8f9fa !important;
@@ -115,4 +119,131 @@ body {
   width: 300px;
   justify-content: space-between;
   margin: 42px 0px;
+}
+
+/* Common Stuff */
+.banner-holder {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.page-name {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.category-toast {
+  height: 77px;
+  width: 248px;
+  border-radius: 8px;
+  background-color: rgba(23, 80, 255, 15%);
+  display: flex;
+  align-items: center;
+}
+
+.category-name {
+  font-size: 20px;
+  margin-left: 18px;
+}
+
+.category-img {
+  margin-left: 23px;
+}
+
+.category-toast-holder {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  column-gap: 40px;
+}
+
+/* Groceries page */
+.grocery-tile {
+  display: flex;
+  flex-direction: column;
+  height: 349px;
+  width: 330px;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+}
+
+.grocery-tile-top {
+  height: 55%;
+}
+
+.grocery-tile-bottom {
+  height: 45%;
+}
+
+.grocery-tile-top div {
+  margin: 47px 95px;
+}
+
+.grocery-tile-top div img {
+  margin: auto;
+}
+
+.grocery-item-name {
+  font-size: 28px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.grocery-item-sub {
+  margin-left: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #68717a;
+}
+
+.grocery-tile-bottom-row {
+  display: flex;
+  margin: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.add-btn {
+  height: 45px;
+  width: 45px;
+  background-color: var(--primary);
+  display: flex;
+  align-items: center;
+  border-radius: 17px;
+  cursor: pointer;
+}
+
+.add-btn .fas {
+  color: #fff;
+  font-size: 18px;
+  margin: auto;
+}
+
+.grocery-tile-holder {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  grid-column-gap: 40px;
+  grid-row-gap: 40px;
+}
+
+/* Fab */
+.fab {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  height: 45px;
+  width: 45px;
+  background-color: var(--primary);
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.fab .fas {
+  color: #fff;
+  font-size: 18px;
+  margin: auto;
 }

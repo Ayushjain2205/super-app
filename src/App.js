@@ -9,8 +9,9 @@ import { UserContext } from "./context/UserContext";
 import { useAuth0 } from "@auth0/auth0-react";
 
 // Import pages
-import Dashboard from "./components/Dashboard";
 import Homepage from "./components/Screens/Homepage";
+import Groceries from "./components/Screens/Groceries";
+
 import WalletForm from "./components/Screens/WalletForm";
 import Chat from "./components/Screens/Chat";
 import LoginScreen from "./components/Screens/LoginScreen";
@@ -112,9 +113,10 @@ const App = () => {
           <Switch>
             <Route exact path='/login' render={(props) => <LoginScreen />} />
             <Route exact path='/' render={(props) => <Homepage />} />
+            <Route exact path='/groceries' render={(props) => <Groceries />} />
+
             <Route exact path='/wallet' render={(props) => <WalletForm />} />
             <Route exact path='/chat' render={(props) => <Chat />} />
-            <Route exact path='/dashboard' component={Dashboard} />
             <Route path='/shops/:slug'>
               <Shop shops={shops} />
             </Route>
