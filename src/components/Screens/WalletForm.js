@@ -40,7 +40,7 @@ function WalletForm() {
           <label className='form-label' htmlFor=''>
             Date of birth
           </label>
-          <input className='form-control' type='date' name='' id='' />
+          <input className='form-control' type='time' name='' id='' />
         </div>
       </div>
 

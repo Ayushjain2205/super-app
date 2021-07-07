@@ -12,10 +12,15 @@ import { useAuth0 } from "@auth0/auth0-react";
 import Homepage from "./components/Screens/Homepage";
 import Groceries from "./components/Screens/Groceries";
 import Restaurants from "./components/Screens/Restaurants";
+import RideWithUs from "./components/Screens/RideWithUs";
+import Cart from "./components/Screens/Cart";
+import Product from "./components/Screens/Product";
+import ScooterBooked from "./components/Screens/ScooterBooked.js";
 
 import WalletForm from "./components/Screens/WalletForm";
 import Chat from "./components/Screens/Chat";
 import LoginScreen from "./components/Screens/LoginScreen";
+import BookRide from "./components/Screens/BookRide";
 
 import Navbar from "./components/layout/Navbar";
 
@@ -116,6 +121,15 @@ const App = () => {
             <Route exact path='/' render={(props) => <Homepage />} />
             <Route exact path='/groceries' render={(props) => <Groceries />} />
             <Route exact path='/food' render={(props) => <Restaurants />} />
+            <Route exact path='/ride' render={(props) => <RideWithUs />} />
+            <Route exact path='/book-ride' render={(props) => <BookRide />} />
+            <Route exact path='/cart' render={(props) => <Cart />} />
+            <Route exact path='/product' render={(props) => <Product />} />
+            <Route
+              exact
+              path='/scooter-booked'
+              render={(props) => <ScooterBooked />}
+            />
 
             <Route exact path='/wallet' render={(props) => <WalletForm />} />
             <Route exact path='/chat' render={(props) => <Chat />} />
