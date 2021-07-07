@@ -16,7 +16,6 @@ body {
   display: flex;
   margin-bottom: 1rem;
   width: 100%;
-  -webkit-backface-visibility: hidden;
 }
 
 .nav-items {
@@ -24,6 +23,11 @@ body {
   flex-direction: row;
   align-items: center;
   width: 100%;
+}
+
+.nav-items a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .nav-item {
@@ -56,8 +60,9 @@ body {
 }
 
 .app-name {
-  font-size: 1.2rem;
+  font-size: 30px;
   font-weight: bolder;
+  color: #1750ff;
 }
 
 /* Homepage */
@@ -201,6 +206,11 @@ body {
   width: 330px;
   border: 1px solid #dee2e6;
   border-radius: 8px;
+}
+
+.grocery-tile-holder a {
+  color: inherit;
+  text-decoration: none !important;
 }
 
 .grocery-tile-top {
@@ -356,6 +366,11 @@ body {
   align-items: flex-start;
 }
 
+.ride-location a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .add-scooter-tile {
   width: 500px;
 }
@@ -439,6 +454,11 @@ hr {
   flex-direction: column;
   margin-left: 40px;
   margin-top: 25px;
+}
+
+.product-desc a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .product-desc h3 {
@@ -550,4 +570,47 @@ hr {
 .scooter-sub {
   font-size: 24px;
   font-weight: 400;
+}
+
+/* Splash screen */
+.splash-screen {
+  height: 100vh;
+  width: 100vw;
+  background-color: #0d6efd;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.center-holder {
+  width: 375px;
+  margin: auto;
+  color: #fff;
+}
+
+.logo {
+  font-size: 90px;
+}
+
+.logo-name {
+  font-size: 96px;
+  margin-bottom: 180px;
+}
+
+.splash-btn,
+.splash-btn:hover,
+.splash-btn:focus {
+  background-color: #fff;
+  color: #0d6efd;
+  width: 364px;
+  height: 67px;
+  border-radius: 18px;
+}
+
+/* Coming Soon */
+.coming-soon {
+  background-color: #0d6efd;
+  margin-top: -16px;
+  height: calc(100vh - 85px);
+  padding-top: 10%;
 }

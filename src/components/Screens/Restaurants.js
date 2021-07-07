@@ -5,6 +5,8 @@ import mexican from "../../assets/CategoryToasts/mexican.png";
 import italian from "../../assets/CategoryToasts/italian.png";
 import chinese from "../../assets/CategoryToasts/chinese.png";
 import salad from "../../assets/TileImages/salad.png";
+import leon from "../../assets/TileImages/leon.png";
+import dominos from "../../assets/TileImages/dominos.png";
 
 import CategoryToast from "../common/categoryToast";
 import FAB from "../common/FAB";
@@ -34,25 +36,18 @@ function Restaurants() {
             cost='499'
           />
           <FoodTile
-            img={salad}
-            name='Bombay Salad'
-            rating='3.5'
-            distance='10'
-            cost='499'
+            img={leon}
+            name='Leon Grill'
+            rating='4.5'
+            distance='8'
+            cost='799'
           />
           <FoodTile
-            img={salad}
-            name='Bombay Salad'
-            rating='3.5'
-            distance='10'
-            cost='499'
-          />
-          <FoodTile
-            img={salad}
-            name='Bombay Salad'
-            rating='3.5'
-            distance='10'
-            cost='499'
+            img={dominos}
+            name='Dominos Pizza'
+            rating='4.2'
+            distance='2'
+            cost='299'
           />
         </div>
       </div>

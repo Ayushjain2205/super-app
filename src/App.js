@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from "react";
-import {
-  Switch,
-  BrowserRouter as Router,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
 import { UserContext } from "./context/UserContext";
 import { useAuth0 } from "@auth0/auth0-react";
 
 // Import pages
+import SplashScreen from "./components/Screens/SplashScreen";
 import Homepage from "./components/Screens/Homepage";
 import Groceries from "./components/Screens/Groceries";
 import Restaurants from "./components/Screens/Restaurants";
@@ -16,6 +12,7 @@ import RideWithUs from "./components/Screens/RideWithUs";
 import Cart from "./components/Screens/Cart";
 import Product from "./components/Screens/Product";
 import ScooterBooked from "./components/Screens/ScooterBooked.js";
+import HomeScreen from "./components/Screens/ComingSoon";
 
 import WalletForm from "./components/Screens/WalletForm";
 import Chat from "./components/Screens/Chat";
@@ -28,6 +25,7 @@ import { GraphQLClient } from "graphql-request";
 import "./App.css";
 
 import Shop from "./components/Shop/Shop";
+import ComingSoon from "./components/Screens/ComingSoon";
 
 const App = () => {
   const { user, isAuthenticated } = useAuth0();
@@ -102,40 +100,43 @@ const App = () => {
     email: user ? user.email : "ayushjain2205@gmail.com",
   });
 
-  console.log(isAuthenticated);
-
   return (
     <UserContext.Provider value={userDetails}>
       <div className='App'>
         <Router>
-          <Navbar />
-          {/* <Route exact path='/login' render={(props) => <LoginScreen />} />
-          <Route exact path='/' render={(props) => <Homepage />} /> */}
-          {/* {!user ? (
-            <Redirect to={{ pathname: "/login" }} />
-          ) : (
-            <Redirect to={{ pathname: "/" }} />
-          )} */}
           <Switch>
-            <Route exact path='/login' render={(props) => <LoginScreen />} />
-            <Route exact path='/' render={(props) => <Homepage />} />
-            <Route exact path='/groceries' render={(props) => <Groceries />} />
-            <Route exact path='/food' render={(props) => <Restaurants />} />
-            <Route exact path='/ride' render={(props) => <RideWithUs />} />
-            <Route exact path='/book-ride' render={(props) => <BookRide />} />
-            <Route exact path='/cart' render={(props) => <Cart />} />
-            <Route exact path='/product' render={(props) => <Product />} />
-            <Route
-              exact
-              path='/scooter-booked'
-              render={(props) => <ScooterBooked />}
-            />
+            <Route exact path='/' render={(props) => <SplashScreen />} />
+            <>
+              <Navbar />
+              <Route exact path='/login' render={(props) => <LoginScreen />} />
 
-            <Route exact path='/wallet' render={(props) => <WalletForm />} />
-            <Route exact path='/chat' render={(props) => <Chat />} />
-            <Route path='/shops/:slug'>
-              <Shop shops={shops} />
-            </Route>
+              <Route exact path='/home' render={(props) => <Homepage />} />
+              <Route
+                exact
+                path='/groceries'
+                render={(props) => <Groceries />}
+              />
+              <Route exact path='/food' render={(props) => <Restaurants />} />
+              <Route exact path='/ride' render={(props) => <RideWithUs />} />
+              <Route exact path='/book-ride' render={(props) => <BookRide />} />
+              <Route exact path='/cart' render={(props) => <Cart />} />
+              <Route exact path='/product' render={(props) => <Product />} />
+              <Route
+                exact
+                path='/scooter-booked'
+                render={(props) => <ScooterBooked />}
+              />
+              <Route
+                exact
+                path='/coming-soon'
+                render={(props) => <ComingSoon />}
+              />
+              <Route exact path='/wallet' render={(props) => <WalletForm />} />
+              <Route exact path='/chat' render={(props) => <Chat />} />
+              <Route path='/shops/:slug'>
+                <Shop shops={shops} />
+              </Route>
+            </>
           </Switch>
         </Router>
       </div>

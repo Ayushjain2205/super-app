@@ -1,6 +1,6 @@
 import React from "react";
 import FAB from "../common/FAB";
-
+import { Link } from "react-router-dom";
 import MapComponent from "../common/Map";
 
 function RideWithUs() {
@@ -19,9 +19,11 @@ function RideWithUs() {
             placeholder='Enter Your Location'
             aria-label='Search'
           />
-          <button className='search-ride-btn btn btn-outline-success'>
-            Go
-          </button>
+          <Link to='book-ride'>
+            <button className='search-ride-btn btn btn-outline-success'>
+              Go
+            </button>
+          </Link>
         </div>
         <div className='map-center'>
           <MapComponent height={500} width={1000} />

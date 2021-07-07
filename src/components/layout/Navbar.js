@@ -8,9 +8,11 @@ function Navbar() {
   return (
     <nav className='navbar '>
       <div class='nav-items'>
-        <span className='app-name'>NAVBAR</span>
+        <span className='app-name'>Cuebe</span>
         <div className='first-nav-section'>
-          <span className='nav-item'>Home</span>
+          <Link to='/home'>
+            <span className='nav-item'>Home</span>
+          </Link>
           <span className='nav-item'>Order History</span>
         </div>
         <div className='search-section d-flex'>
