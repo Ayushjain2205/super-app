@@ -11,6 +11,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 // Import pages
 import Homepage from "./components/Screens/Homepage";
 import Groceries from "./components/Screens/Groceries";
+import Restaurants from "./components/Screens/Restaurants";
 
 import WalletForm from "./components/Screens/WalletForm";
 import Chat from "./components/Screens/Chat";
@@ -114,6 +115,7 @@ const App = () => {
             <Route exact path='/login' render={(props) => <LoginScreen />} />
             <Route exact path='/' render={(props) => <Homepage />} />
             <Route exact path='/groceries' render={(props) => <Groceries />} />
+            <Route exact path='/food' render={(props) => <Restaurants />} />
 
             <Route exact path='/wallet' render={(props) => <WalletForm />} />
             <Route exact path='/chat' render={(props) => <Chat />} />
