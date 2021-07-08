@@ -37,7 +37,7 @@ function Product() {
                 <div className='quantity'>1</div>
                 <i class='fas fa-plus'></i>
               </div>
-              <h3>₹80</h3>
+              <h3>₹125</h3>
             </div>
 
             <div className='facts-section'>
