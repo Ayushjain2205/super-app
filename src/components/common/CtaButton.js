@@ -2,7 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function CtaButton({ text }) {
-  const redirect = text === "Book" ? "/scooter-booked" : "/cart";
+  let redirect;
+  if (text === "Book") {
+    redirect = "/scooter-booked";
+  } else if (text === "Confirm") {
+    redirect = "/my-wallet";
+  } else {
+    redirect = "/cart";
+  }
   return (
     <Link to={redirect}>
       <div className='cta-btn'>

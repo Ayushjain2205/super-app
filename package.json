@@ -2,6 +2,7 @@
   "name": "shopzop",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://sandboxapi.rapyd.net/v1/",
   "dependencies": {
     "@appbaseio/reactivesearch": "^3.18.1",
     "@auth0/auth0-react": "^1.5.0",

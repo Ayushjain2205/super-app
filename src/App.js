@@ -26,6 +26,7 @@ import "./App.css";
 
 import Shop from "./components/Shop/Shop";
 import ComingSoon from "./components/Screens/ComingSoon";
+import Mywallet from "./components/Screens/Mywallet";
 
 const App = () => {
   const { user, isAuthenticated } = useAuth0();
@@ -132,10 +133,8 @@ const App = () => {
                 render={(props) => <ComingSoon />}
               />
               <Route exact path='/wallet' render={(props) => <WalletForm />} />
+              <Route exact path='/my-wallet' render={(props) => <Mywallet />} />
               <Route exact path='/chat' render={(props) => <Chat />} />
-              <Route path='/shops/:slug'>
-                <Shop shops={shops} />
-              </Route>
             </>
           </Switch>
         </Router>

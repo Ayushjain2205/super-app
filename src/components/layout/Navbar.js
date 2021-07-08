@@ -24,12 +24,14 @@ function Navbar() {
           <button className='search-btn btn btn-outline-success'>Search</button>
         </div>
         <div className='profile-div'>
-          <button
-            className='btn btn-primary'
-            style={{ borderRadius: "8px", marginRight: "50px" }}
-          >
-            <i class='fas fa-wallet'></i> {"\u00A0"} My Wallet
-          </button>
+          <Link to='/wallet'>
+            <button
+              className='btn btn-primary'
+              style={{ borderRadius: "8px", marginRight: "50px" }}
+            >
+              <i class='fas fa-wallet'></i> {"\u00A0"} My Wallet
+            </button>
+          </Link>
           <img src={navAvatar} alt='' srcset='' />
           <img style={{ marginLeft: "5px" }} src={arrowDown} alt='' srcset='' />
         </div>

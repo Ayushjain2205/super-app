@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import { UserContext } from "../../context/UserContext";
 import "react-bootstrap-country-select/dist/react-bootstrap-country-select.css";
 import CountrySelect from "react-bootstrap-country-select";
+import FAB from "../common/FAB";
+import CtaButton from "../common/CtaButton";
 
 function WalletForm() {
   const user = useContext(UserContext);
@@ -9,6 +11,10 @@ function WalletForm() {
   console.log(value);
   return (
     <div className='container'>
+      <h1 className='page-name'>My Wallet</h1>
+      <h4 className='wallet-sub'>Lets create a wallet for you!</h4>
+      <h4 className='wallet-intro'>Tell us more about you</h4>
+      <FAB />
       <div className='row mb-3'>
         <div class='col-sm'>
           <label className='form-label' htmlFor=''>
@@ -40,7 +46,7 @@ function WalletForm() {
           <label className='form-label' htmlFor=''>
             Date of birth
           </label>
-          <input className='form-control' type='time' name='' id='' />
+          <input className='form-control' type='date' name='' id='' />
         </div>
       </div>
 
@@ -57,9 +63,6 @@ function WalletForm() {
             rows='3'
           />
         </div>
-      </div>
-
-      <div className='row mb-3'>
         <div class='col-sm'>
           <label className='form-label' htmlFor=''>
             City
@@ -68,7 +71,7 @@ function WalletForm() {
         </div>
         <div class='col-sm'>
           <label className='form-label' htmlFor=''>
-            State
+            Zipcode
           </label>
           <input className='form-control' type='text' name='' id='' />
         </div>
@@ -83,10 +86,13 @@ function WalletForm() {
         </div>
         <div class='col-sm'>
           <label className='form-label' htmlFor=''>
-            Zipcode
+            State
           </label>
           <input className='form-control' type='text' name='' id='' />
         </div>
+      </div>
+      <div className='wallet-confirm'>
+        <CtaButton text='Confirm' />
       </div>
     </div>
   );
