@@ -3,8 +3,8 @@ import cart from "../../assets/cart.png";
 
 import checkout from "../../services/checkout";
 
-function Cart() {
-  // checkout(100);
+function Cart({ amount }) {
+  checkout(amount);
   return (
     <div>
       <div className='center-cart'>

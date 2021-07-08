@@ -40,8 +40,12 @@ export const checkout = (amount) => {
     mode: "no-cors",
   };
 
+  var data;
+
   fetch("https://sandboxapi.rapyd.net/v1/checkout", requestOptions)
     .then((response) => response.text())
-    .then((result) => console.log(result))
+    .then((result) => (data = result))
     .catch((error) => console.log("error", error));
+
+  return data;
 };
