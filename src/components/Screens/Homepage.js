@@ -22,7 +22,7 @@ function Homepage() {
           <HomeTile img={food} text='Order Food' route='/food' />
           <HomeTile img={ride} text='Ride with us' route='/ride' />
           <HomeTile img={packages} text='Send packages' route='/packages' />
-          <HomeTile img={play} text='Play' route='/play' />
+          <HomeTile img={play} text='Play' route='/games' />
           <HomeTile img={green} text='Go Green' route='/coming-soon' />
         </div>
         <div className='home-buttons-holder'>
