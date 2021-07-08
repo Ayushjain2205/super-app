@@ -24,7 +24,6 @@ import Navbar from "./components/layout/Navbar";
 import { GraphQLClient } from "graphql-request";
 import "./App.css";
 
-import Shop from "./components/Shop/Shop";
 import ComingSoon from "./components/Screens/ComingSoon";
 import Mywallet from "./components/Screens/Mywallet";
 
