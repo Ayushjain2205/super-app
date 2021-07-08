@@ -18,7 +18,7 @@ function Cart() {
           rel='noreferrer'
         >
           <button className='cart-pay btn btn-primary btn-lg btn-block'>
-            Select payment method
+            Checkout
           </button>
         </a>
       </div>

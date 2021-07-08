@@ -13,7 +13,7 @@ function ScooterBooked() {
           <h3 className='scooter-sub'>Scan the QR Code at the stand</h3>
         </div>
         <button className='cart-pay btn btn-primary btn-lg btn-block'>
-          Select payment method
+          Checkout
         </button>
       </div>
     </div>
