@@ -12,7 +12,7 @@ import RideWithUs from "./components/Screens/RideWithUs";
 import Cart from "./components/Screens/Cart";
 import Product from "./components/Screens/Product";
 import ScooterBooked from "./components/Screens/ScooterBooked.js";
-import HomeScreen from "./components/Screens/ComingSoon";
+import Games from "./components/Screens/Games";
 
 import WalletForm from "./components/Screens/WalletForm";
 import Chat from "./components/Screens/Chat";
@@ -135,6 +135,7 @@ const App = () => {
               <Route exact path='/wallet' render={(props) => <WalletForm />} />
               <Route exact path='/my-wallet' render={(props) => <Mywallet />} />
               <Route exact path='/chat' render={(props) => <Chat />} />
+              <Route exact path='/games' render={(props) => <Games />} />
             </>
           </Switch>
         </Router>
